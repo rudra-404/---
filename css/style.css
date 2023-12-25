@@ -31,12 +31,8 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    h2{
-        font-size: 24px;
-    }
-    h3{
-        font-size: 18px;
-    }
+    font-size: 24px;
+    color: #338066;
 }
 
 .content .icon{
@@ -63,20 +59,36 @@
 }
 
 .search-box #search{
-    height: 40px;
+    height: 50px;
     width: 400px;
     background: transparent;
-    background-color: #a1b57d;
+    background-color: #bcd390;
+    color: #5a6740;
     border: none;
     margin: 0 0 0 20px;
-    border-radius: 8px;
+    border-radius: 15px;
+    padding: 0 45px 0 25px;
+}
+
+.search-box #search:hover{
+    background-color: transparent;
+    border: 3px solid #afc783;
+    border-radius: 15px;
+    transition: 0.2s;
+
 }
 
 .search-box{
     background-color: #d3eca7;
-    color: #627047;
+    color: #788957;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.search-box .icon{
+    margin: 0;
+    position: relative;
+    right: 40px;
 }
