@@ -6,6 +6,39 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/46c0ec62e0.js" crossorigin="anonymous"></script>
+    <script>
+        // Set the target date for the countdown in the format (dd/MM/yyyy hh:mm:ss)
+        const targetDateString = '01/07/2024 09:00:00';
+        const targetDate = new Date(targetDateString).getTime();
+
+        // Update the countdown every second
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        function updateCountdown() {
+            const currentDate = new Date().getTime();
+            const timeDifference = targetDate - currentDate;
+
+            if (timeDifference <= 0) {
+                // Display a message or take action when the countdown reaches zero
+                document.getElementById('countdown').innerHTML = 'Countdown expired!';
+                clearInterval(countdownInterval);
+            } else {
+                const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+                // Display the countdown in the format "days:hours:minutes:seconds"
+                document.getElementById('countdown').innerHTML =
+                    `${days} Day ${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
+            }
+        }
+
+        function formatTime(time) {
+            // Add leading zero if the time is less than 10
+            return time < 10 ? `0${time}` : time;
+        }
+    </script>
 </head>
 <body>
     <div class="header">
@@ -18,29 +51,35 @@
         </div>
     </div>
     <div class="content">
-        <div class="icon">
+        <div class="data">
             <h2>ভোটকেন্দ্র</h2>
             <h3>১৫ টি</h3>
         </div>
-        <div class="icon">
-            <h2>ইউনিয়ন</h2>
-            <h3>০৯ টি</h3>
+        <div class="data">
+            <h2>মোট ভোটার</h2>
+            <h3>১,৮২,৭৩৫</h3>
         </div>
-        <div class="icon">
+        <div class="data">
             <h2>পুরুষ ভোটার</h2>
-            <h3>৩০,৩৬৭ জন</h3>
+            <h3>৮৯,৭৮২ জন</h3>
         </div>
-        <div class="icon">
+        <div class="data">
             <h2>মহিলা ভোটার</h2>
-            <h3>২৬,৭২১ জন</h3>
+            <h3>৯২,৯৫৩ জন</h3>
         </div>
+    </div>
+    <div class="time-left">
+        <h2>দ্বাদশ জাতীয় নির্বাচনের বাকি আর মাত্র</h2>
+        <i class="fa-regular fa-clock"></i>
+        <span id="countdown"></span>
     </div>
     <div class="search-box">
         <h2>নির্দিষ্ট ইউনিয়ন</h2>
         <input type="search" name="" id="search">
-        <div class="icon">
+        <div class="search-icon">
             <i class="fa-solid fa-magnifying-glass"></i>
         </div>
     </div>
+    
 </body>
 </html>
