@@ -125,3 +125,67 @@
 .search-box h2{
     margin-left: 20px;
 }
+
+.map{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #48605c;
+    color: #d9dad7;
+}
+
+.map h1{
+    margin: 30px auto;
+    font-size: 30px;
+    word-spacing: 10px;
+    letter-spacing: 10px;
+    text-shadow: 5px 5px 10px black;
+}
+
+.map iframe{
+    height:300px;
+    width: 800px;
+    box-shadow: -5px 5px 20px black;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.map iframe:hover{
+    height:350px;
+    width: 1050px;
+}
+
+.footer{
+    height: 300px;
+    width: 100%;
+    background-color: #f5f9ee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #798269;
+}
+
+.footer .box{
+    height: 230px;
+    width: 700px;
+    background-color: #f5f9ee;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: -1px 1px 10px;
+    border-radius: 10px;
+}
+
+.footer h1{
+    font-size: 25px;
+    padding: 5px 0;
+}
+
+.footer h3{
+    font-size: 15px;
+    padding: 5px 0;
+}
