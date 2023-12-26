@@ -144,16 +144,11 @@
 }
 
 .map iframe{
-    height:300px;
-    width: 800px;
+    height:350px;
+    width: 1050px;
     box-shadow: -5px 5px 20px black;
     border-radius: 10px;
     transition: 0.5s;
-}
-
-.map iframe:hover{
-    height:350px;
-    width: 1050px;
 }
 
 .footer{
