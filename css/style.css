@@ -4,6 +4,8 @@
     font-size: 22px;
 }
 
+/* ------------------ Header Section Start ------------------ */
+
 .header{
     background: linear-gradient(rgba(25,25,25,0.7),rgba(25,25,25,0.7)),url(../images/bg01.jpg);
     height: 250px;
@@ -24,6 +26,40 @@
     height: 150px;
     filter: opacity(40%);
 }
+
+/* ------------------ Header Section End ------------------ */
+
+
+/* ------------------ Timer Start ------------------ */
+
+.time-left{
+    background-color: #788759;
+    color: #d3eca7;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.time-left .fa-regular{
+    margin: 0 20px 0 0;
+}
+
+.time-left h2{
+    margin: 0 20px 0 0;
+}
+
+.time-left #countdown{
+    margin: 0 0 0 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #879c64;
+    border-radius: 15px;
+    padding: 15px 40px;
+}
+
+/* ------------------ Timer End ------------------ */
+
+/* ------------------ Content Start ------------------ */
 
 .content{
     height: 400px;
@@ -53,30 +89,10 @@
     transition: 0.3s;
 }
 
-.time-left{
-    background-color: #788759;
-    color: #d3eca7;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+/* ------------------ Content End ------------------ */
 
-.time-left .fa-regular{
-    margin: 0 20px 0 0;
-}
 
-.time-left h2{
-    margin: 0 20px 0 0;
-}
-
-.time-left #countdown{
-    margin: 0 0 0 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #879c64;
-    border-radius: 15px;
-    padding: 15px 40px;
-}
+/* ------------------ Search Box Start ------------------ */
 
 .search-box h2{
     display: inline-block;
@@ -126,6 +142,22 @@
     margin-left: 20px;
 }
 
+/* ------------------ Search Box End ------------------ */
+
+/* ------------------ Nav Bar Start ------------------ */
+
+.nav{
+    height: 60px;
+    background-color: #bcd390;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* ------------------ Nav Bar End ------------------ */
+
+/* ------------------ MAP Section Start ------------------ */
+
 .map{
     height: 500px;
     display: flex;
@@ -150,6 +182,11 @@
     border-radius: 10px;
     transition: 0.5s;
 }
+
+/* ------------------ MAP Section End ------------------ */
+
+
+/* ------------------ Footer Start ------------------ */
 
 .footer{
     height: 300px;
@@ -184,3 +221,5 @@
     font-size: 15px;
     padding: 5px 0;
 }
+
+/* ------------------ Footer Start ------------------ */
