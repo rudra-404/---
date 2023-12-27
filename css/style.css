@@ -33,8 +33,8 @@
 /* ------------------ Timer Start ------------------ */
 
 .time-left{
-    background-color: #788759;
-    color: #d3eca7;
+    background-color: #3d452e;
+    color: #819165;
     height: 100px;
     display: flex;
     align-items: center;
@@ -52,7 +52,7 @@
 .time-left #countdown{
     margin: 0 0 0 5px;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #879c64;
+    background-color: #313825;
     border-radius: 15px;
     padding: 15px 40px;
 }
@@ -91,6 +91,35 @@
 
 /* ------------------ Content End ------------------ */
 
+/* ------------------ Nav Bar Start ------------------ */
+
+.nav{
+    height: 100px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav .menu{
+    height: 50px;
+    line-height: 50px;
+    padding: 0 15px;
+    border-radius: 50px;
+    background-color: transparent;
+    border: 3px solid #9ed9c5;
+    color: #9ed9c5;
+    cursor: pointer;
+}
+
+.nav .menu:hover{
+    background-color: #9ed9c5;
+    color: black;
+    transition: 0.5s;
+}
+
+/* ------------------ Nav Bar End ------------------ */
+
 
 /* ------------------ Search Box Start ------------------ */
 
@@ -128,10 +157,10 @@
     background-color: #bcd390;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
     i{
         font-size: 25px;
         padding: 10px;
-        
     }
 }
 
@@ -139,53 +168,7 @@
     background-color: #9aab76;
 }
 
-/* .search-box #search{
-    height: 50px;
-    width: 400px;
-    background: transparent;
-    background-color: #bcd390;
-    color: #5a6740;
-    border: none;
-    margin: 0 0 0 20px;
-    border-radius: 15px;
-    padding: 0 45px 0 25px;
-}
-
-.search-box #search:hover{
-    background-color: transparent;
-    border: 3px solid #afc783;
-    border-radius: 15px;
-    transition: 0.2s;
-
-}
-
-.search-box .search-icon{
-    margin: 0;
-    position: relative;
-    right: 40px;
-}
-
-.search-box #search{
-    width: 530px;
-}
-
-.search-box h2{
-    margin-left: 20px;
-} */
-
 /* ------------------ Search Box End ------------------ */
-
-/* ------------------ Nav Bar Start ------------------ */
-
-.nav{
-    height: 60px;
-    background-color: #bcd390;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-/* ------------------ Nav Bar End ------------------ */
 
 /* ------------------ MAP Section Start ------------------ */
 
