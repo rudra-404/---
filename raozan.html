@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/raozan.css">
+    <script src="https://kit.fontawesome.com/46c0ec62e0.js" crossorigin="anonymous"></script>
+    <script>
+        // Set the target date for the countdown in the format (dd/MM/yyyy hh:mm:ss)
+        const targetDateString = '01/07/2024 09:00:00';
+        const targetDate = new Date(targetDateString).getTime();
+
+        // Update the countdown every second
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        function updateCountdown() {
+            const currentDate = new Date().getTime();
+            const timeDifference = targetDate - currentDate;
+
+            if (timeDifference <= 0) {
+                // Display a message or take action when the countdown reaches zero
+                document.getElementById('countdown').innerHTML = 'Countdown expired!';
+                clearInterval(countdownInterval);
+            } else {
+                const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+                // Display the countdown in the format "days:hours:minutes:seconds"
+                document.getElementById('countdown').innerHTML =
+                    `${days} Day ${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
+            }
+        }
+
+        function formatTime(time) {
+            // Add leading zero if the time is less than 10
+            return time < 10 ? `0${time}` : time;
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="images/upozila-logo.png" alt="bangladesh">
+        </div>
+        <h1>রাউজান উপজেলা</h1>
+        <div class="logo">
+            <img src="images/ni-ko.png" alt="bangladesh">
+        </div>
+    </div>
+    <div class="time-left">
+        <h2>দ্বাদশ জাতীয় নির্বাচনের বাকি আর মাত্র</h2>
+        <i class="fa-regular fa-clock"></i>
+        <span id="countdown"></span>
+    </div>
+
+    <div class="nav">
+        <div class="menu">
+            <h3>
+                <a href="index.html" target="_blank">
+                    ভোটকেন্দ্রসমূহ
+                </a>
+            </h3>
+        </div>
+        <div class="home menu">
+            <h3>
+                <a href="raozan.html">
+                    এক নজরে রাউজান
+                </a>
+            </h3>
+        </div>
+        <div class="menu">
+            <h3>
+                <a href="booth.html" target="_blank">
+                    সকল বুথ
+                </a>
+            </h3>
+        </div>
+        <div class="menu">
+            <h3>
+                <a href="plan.html" target="_blank">
+                    পরিকল্পনা
+                </a>
+            </h3>
+        </div>
+    </div>
+
+    <div class="content">
+        <p class="title">ইতিহাস ও নামকরণ</p>
+        <div class="description">
+            <figure>
+                <img src="images/raozan-map.svg.png" alt="রাউজান উপজেলা">
+                <figcaption>রাউজান উপজেলা</figcaption>
+            </figure>
+            রাউজান উপজেলার প্রাচীন ইতিহাসের সাথে বৌদ্ধ উপনিবেশের সম্পর্ক ওতপ্রোতভাবে জড়িত । জানা গেছে যে, রাউজানে আদি বসতি স্থাপনকারী হলো বৌদ্ধরা । বিনাজুরীতে প্রায় চারশত বছরের প্রাচীন বৌদ্ধ বিহার রয়েছে । রাউজান এলাকার নামকরণের সাথেও বৌদ্ধ ঐতিহ্য জড়িত । কারণ মোগল সুবেদার শায়েস্তা খান কর্তৃক ১৬৬৬ খ্রিষ্টাব্দে চট্টগ্রাম বিজয়ের প্রায় ১০০০ বছর পূর্ব থেকে সারা চট্টগ্রাম অঞ্চলই বৌদ্ধ ধর্মাবলম্বী মগ বা আরাকানীদের অধিকারে ছিল । ফলে রসিকতা করে অনেকে চট্টগ্রামকে মগের মুল্লুকও বলতেন । সে অনুযায়ী ধারণা করা হয় যে, রাউজানও একসময় আরাকান রাজ্যের অন্তর্গত ছিল । আরাকানী ভাষায় এটিকে বলা হত রজোওয়াং বা রাজ পরিবারের ভূমি । আর এ নামের অপভ্রংশ থেকেই রাউজান নামের উৎপত্তি হয়েছে বলে বিশিষ্ট পণ্ডিতগণের ধারণা ।
+        </div>
+
+        <p class="title">অবস্থান ও আয়তন</p>
+        <div class="description">
+            রাউজান উপজেলা চট্টগ্রাম জেলার উত্তর-পূর্বাংশে ২২°২৫´ থেকে ২২°৪০´ উত্তর অক্ষাংশ এবং ৯১°৫১´ থেকে ৯১°৫৯´ পূর্ব দ্রাঘিমাংশ জুড়ে অবস্থিত । চট্টগ্রাম জেলা সদর থেকে এ উপজেলার দূরত্ব প্রায় ৩০ কিলোমিটার । এ উপজেলার উত্তরে ও উত্তর-পশ্চিমে ফটিকছড়ি উপজেলা, পশ্চিমে হালদা নদী ও হাটহাজারী উপজেলা, দক্ষিণ-পশ্চিমে হালদা নদী ও চট্টগ্রাম সিটি কর্পোরেশনের চান্দগাঁও থানা, দক্ষিণে কর্ণফুলী নদী ও বোয়ালখালী উপজেলা এবং পূর্বে রাঙ্গুনিয়া উপজেলা ও রাঙ্গামাটি জেলার কাউখালী উপজেলা অবস্থিত । রাউজান উপজেলার আয়তন ২৪৬.৫৮ বর্গ কিলোমিটার ।
+
+        </div>
+
+        <p class="title">প্রশাসনিক এলাকা</p>
+        <div class="description">
+            ১৯৪৭ সালের আগস্ট মাসে রাউজান থানার কার্যক্রম শুরু করা হয় এবং ১৯৮৪ সালে থানাকে উপজেলায় রূপান্তর করা হল । ২০০০ সালে রাউজান পৌরসভা ঘোষিত হয় ।<br>রাউজান উপজেলায় ১টি পৌরসভা ও ১৪টি ইউনিয়ন রয়েছে । সম্পূর্ণ রাউজান উপজেলার প্রশাসনিক কার্যক্রম রাউজান মডেল থানার আওতাধীন ।<br>
+            <h2>পৌরসভা:</h2>
+            <li>রাউজান</li>
+            <h2>ইউনিয়নসমূহ:</h2>
+            <li>১নং হলদিয়া</li>
+            <li>২নং ডাবুয়া</li>
+            <li>৩নং চিকদাইর</li>
+            <li>৪নং গহিরা</li>
+            <li>৫নং সুলতানপুর <span>(৫নং সুলতানপুর ইউনিয়ন সম্পূর্ণ রাউজান পৌরসভার আওতাধীন হওয়ায় ইউনিয়ন পরিষদের কার্যক্রম বিলুপ্ত হয়ে গেছে)</span></li>
+            <li>৬নং বিনাজুরী</li>
+            <li>৭নং রাউজান</li>
+            <li>৮নং কদলপুর</li>
+            <li>৯নং পাহাড়তলী</li>
+            <li>১০নং পূর্ব গুজরা</li>
+            <li>১১নং পশ্চিম গুজরা</li>
+            <li>১২নং উরকিরচর</li>
+            <li>১৩নং নোয়াপাড়া</li>
+            <li>১৪নং বাগোয়ান</li>
+            <li>১৫নং নওয়াজিশপুর</li>
+        </div>
+
+        <p class="title">জনসংখ্যার উপাত্ত</p>
+        <div class="description">
+            ২০১১ সালের পরিসংখ্যান অনুযায়ী রাউজান উপজেলার মোট জনসংখ্যা ৩,২৫,৩৮৯ জন । এর মধ্যে পুরুষ ১,৬৩,৯৬৩ জন এবং মহিলা ১,৬১,৪২৬ জন । মোট জনসংখ্যার ৭৫% মুসলিম, ১৮% হিন্দু, ৬% বৌদ্ধ ও ১% অন্যান্য ধর্মাবলম্বী রয়েছে। এ উপজেলায় মারমা, ত্রিপুরা, মগ প্রভৃতি আদিবাসী জনগোষ্ঠীর বসবাস রয়েছে ।
+        </div>
+    </div>
+
+    <footer>
+        <div class="box">
+            <h1>পরিকল্পনা ও বাস্তবায়ন</h1>
+            <h3>অংগ্যজাই মারমা (উপজেলা নির্বাহী অফিসার) রাউজান, চট্টগ্রাম</h3>
+        </div>
+    </footer>
+</body>
+</html>
