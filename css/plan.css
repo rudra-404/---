@@ -29,7 +29,6 @@
 
 /* ------------------ Header Section End ------------------ */
 
-
 /* ------------------ Timer Start ------------------ */
 
 .time-left{
@@ -62,31 +61,44 @@
 /* ------------------ Content Start ------------------ */
 
 .content{
-    height: 250px;
-    background-color: #9ed9c5;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: 24px;
-    color: #338066;
+    background-color: #e0ebeb;
 }
 
-.content .data{
-    height: 80px;
-    width: 160px;
-    background-color: #c7f2e3;
-    padding: 40px;
-    border-radius: 10px;
+.content .title{
+    padding: 25px;
+    font-size: 30px;
+    background-color: #cad5d5;
+    text-align: center;
+}
+
+.content .description{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    line-height: 40px;
+    padding: 25px 0;
 }
 
-.content .data:hover{
-    box-shadow: -1px 1px 10px;
-    transition: 0.3s;
+.content .description img{
+    height: 300px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: -2px 2px 10px black;
+}
+
+.content .description a{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content .description .info{
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+.content .description .name{
+    font-size: 37px;
+    margin-top: 5px;
 }
 
 /* ------------------ Content End ------------------ */
@@ -129,85 +141,6 @@
 }
 
 /* ------------------ Nav Bar End ------------------ */
-
-
-/* ------------------ Search Box Start ------------------ */
-
-.search-box{
-    background-color: #d3eca7;
-    color: #788957;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.search-box h2{
-    display: inline-block;
-    margin: 0;
-}
-
-.search-box #select{
-    margin: 0 0 0 20px;
-    padding: 10px;
-    height: 60px;
-    width: 400px;
-    background: transparent;
-    background-color: #bcd390;
-    color: #5a6740;
-    border: none;
-    border-radius: 5px;
-    font-size: 22px;
-}
-
-.search-box button{
-    height: 60px;
-    width: 70px;
-    margin: 0 0 0 5px;
-    background-color: #bcd390;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    i{
-        font-size: 25px;
-        padding: 10px;
-    }
-}
-
-.search-box button:hover{
-    background-color: #9aab76;
-}
-
-/* ------------------ Search Box End ------------------ */
-
-/* ------------------ MAP Section Start ------------------ */
-
-.map{
-    height: 550px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    background-color: #48605c;
-    color: #d9dad7;
-}
-
-.map h1{
-    margin: 30px auto;
-    font-size: 30px;
-    word-spacing: 10px;
-    letter-spacing: 10px;
-    text-shadow: 5px 5px 10px black;
-}
-
-.map iframe{
-    height:400px;
-    width: 1175px;
-    box-shadow: -5px 5px 20px black;
-    border-radius: 10px;
-    transition: 0.5s;
-}
-
-/* ------------------ MAP Section End ------------------ */
 
 
 /* ------------------ Footer Start ------------------ */

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/plan.css">
+    <script src="https://kit.fontawesome.com/46c0ec62e0.js" crossorigin="anonymous"></script>
+    <script>
+        // Set the target date for the countdown in the format (dd/MM/yyyy hh:mm:ss)
+        const targetDateString = '01/07/2024 09:00:00';
+        const targetDate = new Date(targetDateString).getTime();
+
+        // Update the countdown every second
+        const countdownInterval = setInterval(updateCountdown, 1000);
+
+        function updateCountdown() {
+            const currentDate = new Date().getTime();
+            const timeDifference = targetDate - currentDate;
+
+            if (timeDifference <= 0) {
+                // Display a message or take action when the countdown reaches zero
+                document.getElementById('countdown').innerHTML = 'Countdown expired!';
+                clearInterval(countdownInterval);
+            } else {
+                const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+                // Display the countdown in the format "days:hours:minutes:seconds"
+                document.getElementById('countdown').innerHTML =
+                    `${days} Day ${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
+            }
+        }
+
+        function formatTime(time) {
+            // Add leading zero if the time is less than 10
+            return time < 10 ? `0${time}` : time;
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="images/upozila-logo.png" alt="bangladesh">
+        </div>
+        <h1>রাউজান উপজেলা</h1>
+        <div class="logo">
+            <img src="images/ni-ko.png" alt="bangladesh">
+        </div>
+    </div>
+    <div class="time-left">
+        <h2>দ্বাদশ জাতীয় নির্বাচনের বাকি আর মাত্র</h2>
+        <i class="fa-regular fa-clock"></i>
+        <span id="countdown"></span>
+    </div>
+
+    <div class="nav">
+        <div class="menu">
+            <a href="index.html">
+                <h3>
+                    ভোটকেন্দ্রসমূহ
+                </h3>
+            </a>
+        </div>
+        <div class="menu">
+            <a href="raozan.html">
+                <h3>
+                    এক নজরে রাউজান
+                </h3>
+            </a>
+        </div>
+        <div class="menu">
+            <a href="booth.html">
+                <h3>
+                    সকল বুথ
+                </h3>
+            </a>
+        </div>
+        <div class="home menu">
+            <a href="plan.html">
+                <h3>
+                    পরিকল্পনা
+                </h3>
+            </a>
+        </div>
+    </div>
+
+    <div class="content">
+        <p class="title">পরিকল্পনা ও বাস্তবায়ন</p>
+        <div class="description">
+            <img src="images/uno.jpg" alt="নির্বাহী অফিসার">
+            <p class="info">উপজেলা নির্বাহী অফিসার</p>
+            <p class="name">অংগ্যজাই মারমা</p>
+            <p class="info">মোবাইলঃ ০১৫৫৪৪৩৩২২১</p>
+            <p class="info">ইমেইলঃ <a href="#">raozan@gmail.com</a></p>
+            <p class="info">ওয়েবসাইটঃ <a href="#">www.raozan.com</a></p>
+            <p class="info">রাউজান, চট্টগ্রাম</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="box">
+            <h1>পরিকল্পনা ও বাস্তবায়ন</h1>
+            <h3>অংগ্যজাই মারমা (উপজেলা নির্বাহী অফিসার) রাউজান, চট্টগ্রাম</h3>
+        </div>
+    </footer>
+</body>
+</html>
