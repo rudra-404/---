@@ -6,25 +6,10 @@
 
 /* ------------------ Header Section Start ------------------ */
 
-.header{
-    background: linear-gradient(rgba(25,25,25,0.7),rgba(25,25,25,0.7)),url(../images/bg01.jpg);
-    height: 250px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.header h1{
-    font-size: 65px;
-    padding: 15px 40px;
-    color: rgba(255, 255, 255, 0.3);
-}
-
-.header .logo img{
-    height: 150px;
-    filter: opacity(40%);
+.header img{
+    margin-bottom: -8px;
+    height: auto;
+    width: 100%;
 }
 
 /* ------------------ Header Section End ------------------ */
@@ -149,28 +134,29 @@ footer{
     height: 150px;
     width: 100%;
     background-color: #f5f9ee;
+    color: #798269;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    color: #798269;
 }
 
-footer .box{
-    height: 80px;
-    width: 700px;
-    background-color: #f5f9ee;
+footer .box1{
+    position: absolute;
+    left: 30px;
     padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    box-shadow: -1px 1px 10px;
     border-radius: 10px;
 }
 
+footer .box2{
+    position: absolute;
+    right: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: right;
+}
+
 footer h1{
-    font-size: 25px;
+    font-size: 20px;
     padding: 5px 0;
 }
 
