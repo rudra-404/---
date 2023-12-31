@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/46c0ec62e0.js" crossorigin="anonymous"></script>
     <script>
@@ -39,6 +40,7 @@
             return time < 10 ? `0${time}` : time;
         }
     </script>
+
 </head>
 <body>
     <div class="header">
@@ -127,7 +129,7 @@
 
     <div class="map">
         <h1><i class="fa fa-home" aria-hidden="true"></i> কেন্দ্র সমূহ</h1>
-        <iframe src="https://www.google.com/maps/d/embed?mid=1XSpFQRcfVRV-N-wy9c9QGk1Q4hLk3X8&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>
+        <div id="map"></div>
     </div>
 
     <footer>
@@ -143,5 +145,1998 @@
             <h3>মুহাম্মদ নিয়াজ মোর্শেদ (উপজেলা প্রকল্প বাস্তবায়ন অফিসার)</h3>
         </div>
     </footer>
+
+    <!-- Coding -->
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="a.js"></script>
+    <script>
+
+        var view = 12;
+
+        var map = L.map('map').setView([22.517004532180648, 91.90665793734895], view);
+
+        var kaiser = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}',{
+            maxZoom: 20,
+            subdomains:['mt0','mt1','mt2','mt3']
+        });
+
+        kaiser.addTo(map);
+
+        var myIcon = L.icon({
+            iconUrl: 'p.png',
+            iconSize: [30, 40]
+        });
+
+        L.marker([22.58313, 91.88152],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ০১</b><br>
+        <p align="left">
+            উত্তর সর্ত্তা দরগাহ উচ্চ বিদ্যালয় (পুরুষ ভোট কেন্দ্র) <br>
+        ইউনিয়নঃ হলদিয়া<br>
+        ভোটারঃ ৩০৬৭<br>
+        দূরত্বঃ ৭ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+    
+        L.marker([22.58272 , 91.87207],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ০২</b><br>
+        <p align="left">
+            উত্তর সর্ত্তা দরগাহ উচ্চ বিদ্যালয় সংলগ্ন সঃপ্রাঃবিঃ(মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ হলদিয়া<br>
+        ভোটারঃ ২৭৪০<br>
+        দূরত্বঃ ৭ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.60234, 91.89489],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ০৩</b><br>
+        <p align="left">
+            ১ নং হলদিয়া সঃ প্রাঃবিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ হলদিয়া<br>
+        ভোটারঃ ৩৭১৫<br>
+        দূরত্বঃ ৭ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.58692, 91.89368],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ০৪</b><br>
+        <p align="left">
+            ৬ নং গর্জনিয়া সঃ প্রাঃবিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ হলদিয়া<br>
+        ভোটারঃ২৬০৯<br>
+        দূরত্বঃ ৮ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.57917, 91.90193],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ০৫</b><br>
+        <p align="left">
+            ৫ নং ইয়াছিন নগর জুবলি সঃ প্রাঃবিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ হলদিয়া<br>
+        ভোটারঃ ৫৩৩৬<br>
+        দূরত্বঃ ৭ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.58575, 91.92016],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ০৬</b><br>
+        <p align="left">
+            ৭ নং জানি পাথর রহমানিয়া সঃ প্রাঃবিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ হলদিয়া<br>
+        ভোটারঃ ২৪৮৫<br>
+        দূরত্বঃ ৭ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.56393, 91.88443],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ০৭</b><br>
+        <p align="left">
+            ১০ নং পশ্চিম ডাবুয়া সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ ডাবুয়া<br>
+        ভোটারঃ ৩০৮৫<br>
+        দূরত্বঃ ৫ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.56315, 91.89452],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ০৮</b><br>
+        <p align="left">
+            ডাবুয়া উচ্চ বিঃ(পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ ডাবুয়া<br>
+        ভোটারঃ ১৭৭১<br>
+        দূরত্বঃ ৪ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.56026, 91.90331],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ০৯</b><br>
+        <p align="left">
+            ডাবুয়া তারাচরণ শ্যামাচরণ উচ্চ বিঃ (পুরুষ ও মহিলা কেন্দ্র)<br>
+        ইউনিয়নঃ ডাবুয়া<br>
+        ভোটারঃ ৩০০২<br>
+        দূরত্বঃ ৩.৫ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.57446, 91.91876],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ১০</b><br>
+        <p align="left">
+            ১১ নং পূর্ব ডাবুয়া সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোটকেন্দ্র)<br>
+        ইউনিয়নঃ ডাবুয়া<br>
+        ভোটারঃ ৩৪২০<br>
+        দূরত্বঃ ৩ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.55379, 91.92369],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ১১</b><br>
+        <p align="left">
+            ১৩ নং হিংগলা মুছা শাহ সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা কেন্দ্র)<br>
+        ইউনিয়নঃ ডাবুয়া<br>
+        ভোটারঃ ৩১২৯<br>
+        দূরত্বঃ ২.৫ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.53311, 91.92363],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ১২</b><br>
+        <p align="left">
+            হিংগলা মুছা শাহ উচ্চ বিদ্যালয় (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ ডাবুয়া<br>
+        ভোটারঃ ২৭৯৭<br>
+        দূরত্বঃ ২.৫ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.54438, 91.93433],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ১৩</b><br>
+        <p align="left">
+            ১৪ নং কলমপতি সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ ডাবুয়া<br>
+        ভোটারঃ ২৭০৩<br>
+        দূরত্বঃ ৫ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.528, 91.86808],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ১৪</b><br>
+        <p align="left">
+            ২৫ নং দক্ষিন সত্তা সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ চিকদাইর<br>
+        ভোটারঃ ৪৪৭৫<br>
+        দূরত্বঃ ৬ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.54628, 91.87191],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ১৫</b><br>
+        <p align="left">
+            ২১ নং চিকদাইর মুন্সিপাড়া সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ চিকদাইর<br>
+        ভোটারঃ ৫২৯৪<br>
+        দূরত্বঃ ৪ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.537, 91.88262],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ১৬</b><br>
+        <p align="left">
+            ১৯ নং চিকদাইর সরকার সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ চিকদাইর<br>
+        ভোটারঃ ১৮১২<br>
+        দূরত্বঃ ৫ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.55171, 91.89024],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ১৭</b><br>
+        <p align="left">
+            ২০ নং চিকদাইর পাঠানপাড়া সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা কেন্দ্র)<br>
+        ইউনিয়নঃ চিকদাইর<br>
+        ভোটারঃ ২৭৯৪<br>
+        দূরত্বঃ ৪ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.53407, 91.84776],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ১৮</b><br>
+        <p align="left">
+            ৩৫ নং কোতয়ালী ঘোনা সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ গহিরা<br>
+        ভোটারঃ ৪৩৫০<br>
+        দূরত্বঃ ৮ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.53398, 91.86141],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ১৯</b><br>
+        <p align="left">
+            দলইনগর উচ্চ বিদ্যালয়, (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ গহিরা<br>
+        ভোটারঃ ৩১৪৪<br>
+        দূরত্বঃ ৭ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.52599, 91.86428], {icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ২০</b><br>
+        <p align="left">
+            ৩৪ নং দক্ষিন দলইনগর সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ গহিরা<br>
+        ভোটারঃ ২১৭৬<br>
+        দূরত্বঃ ৮ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.51994, 91.85683],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ২১</b><br>
+        <p align="left">
+            পশ্চিম গহিরা ইউনুছ সুফিয়া চৌধুরী পাবলিক  উচ্চ বিদ্যালয় (পুরুষ ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পৌরসভা<br>
+        ভোটারঃ ৩৩৬৩<br>
+        দূরত্বঃ ৭ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.51726, 91.85663],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ২২</b><br>
+        <p align="left">
+            পশ্চিম গহিরা সঃ প্রাঃ বিঃ (মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পৌরসভা<br>
+        ভোটারঃ ২৯৮৫<br>
+        দূরত্বঃ ৯ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.50509, 91.86806],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ২৩</b><br>
+        <p align="left">
+            ২৯ নং দক্ষিন গহিরা খান সাহেব আব্দুল করিম সঃ প্রাঃ বিঃ (মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পৌরসভা<br>
+        ভোটারঃ ২৭০৮<br>
+        দূরত্বঃ ৯ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.50513, 91.86800],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ২৪</b><br>
+        <p align="left">
+            দক্ষিণ গহিরা খান সাহেব আবদুল করিম উচ্চ বিঃ (পুরুষ ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পৌরসভা<br>
+        ভোটারঃ ৩১৫৪<br>
+        দূরত্বঃ ৯ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.52112, 91.86848],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ২৫</b><br>
+        <p align="left">
+            গহিরা আবদুল জব্বার ইয়াংমেন সোসাইটি বহুমুখী উচ্চ বিদ্যালয় ( মহিলা কেন্দ্র)<br>
+        ইউনিয়নঃ পৌরসভা<br>
+        ভোটারঃ ২৬৩৩<br>
+        দূরত্বঃ ৭ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.52200497588612, 91.86922778959081],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ২৬</b><br>
+        <p align="left">
+            গহিরা কলেজ (পুরুষ কেন্দ্র)<br>
+        ইউনিয়নঃ পৌরসভা<br>
+        ভোটারঃ ২৯০৮<br>
+        দূরত্বঃ ৭ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.53126, 91.89762],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ২৭</b><br>
+        <p align="left">
+            সুলতানপুর উচ্চ বিঃ  (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পৌরসভা<br>
+        ভোটারঃ ৫৩৪৩<br>
+        দূরত্বঃ ১ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.53331, 91.8952],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ২৮</b><br>
+        <p align="left">
+            ৪১ নং সুলতানপুর প্রসন্ন সঃ প্রাঃ বিঃ  (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পৌরসভা<br>
+        ভোটারঃ ৫২২৬<br>
+        দূরত্বঃ ৩ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.53801, 91.94244],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ২৯</b><br>
+        <p align="left">
+            রাউজান সরকারি কলেজ  পশ্চিম অংশ ভবন (মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পৌরসভা<br>
+        ভোটারঃ ৩৭২৮<br>
+        দূরত্বঃ ১ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.53431, 91.91161],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৩০</b><br>
+        <p align="left">
+            রাউজন সরকারি কলেজ দক্ষিন অংশ ভবন ( পুরুষ ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পৌরসভা<br>
+        ভোটারঃ ৪২৭৫<br>
+        দূরত্বঃ ১ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+    L.marker([22.54067, 91.91165],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৩১</b><br>
+        <p align="left">
+            রাউজান আর আর এ সি মডেল উচ্চ বিদ্যালয় (দক্ষিন অংশের ভবন) (পুরুষ ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পৌরসভা<br>
+        ভোটারঃ ২৬২৮<br>
+        দূরত্বঃ ০.৫  কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+ 
+        L.marker([22.5406, 91.91029],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৩২</b><br>
+        <p align="left">
+            রাউজান আর আর এ সি মডেল উচ্চ বিদ্যালয় (উত্তর অংশের ভবন) (মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পৌরসভা<br>
+        ভোটারঃ ২৩৯০<br>
+        দূরত্বঃ ০.৫ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.54254, 91.91923],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৩৩</b><br>
+        <p align="left">
+            ৪৭ নং শাহনগর সরকারী প্রাথমিক বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পৌরসভা<br>
+        ভোটারঃ ৩৬৯৪<br>
+        দূরত্বঃ 2 কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+ 
+        L.marker([22.52859, 91.92036],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৩৪</b><br>
+        <p align="left">
+            ৪৬ নং ঢেউয়া হাজী পাড়া সঃপ্রাঃবিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পৌরসভা<br>
+        ভোটারঃ ২৬৮৮<br>
+        দূরত্বঃ ১.৫  কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.53552, 91.92969],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৩৫</b><br>
+        <p align="left">
+            রাউজান সুরেশ বিদ্যায়তন (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পৌরসভা<br>
+        ভোটারঃ ৯২৫<br>
+        দূরত্বঃ ২ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.53801, 91.94244],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৩৬</b><br>
+        <p align="left">
+            রাউজান মহিলা মাদ্রাসা নতুন ভবন (পুরুষ ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পৌরসভা<br>
+        ভোটারঃ ৩৭৭১<br>
+        দূরত্বঃ ৪ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.53765, 91.94311],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৩৭</b><br>
+        <p align="left">
+            রাউজান মহিলা মাদ্রাসা পুরাতন ভবন (মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পৌরসভা<br>
+        ভোটারঃ ৩২০৬<br>
+        দূরত্বঃ ৪ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.51703, 91.89266],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৩৮</b><br>
+        <p align="left">
+            ৫৩ নং ইদিলপুর সঃ প্রাঃ বিঃ  (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ বিনাজুরী <br>
+        ভোটারঃ ৩৭০৪<br>
+        দূরত্বঃ ৭ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.49852, 91.89287],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৩৯</b><br>
+        <p align="left">
+            বিনাজুরী নবীন স্কুল এন্ড কলেজ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ বিনাজুরী <br>
+        ভোটারঃ ২২৫২<br>
+        দূরত্বঃ ৮ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.5093, 91.90744],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৪০</b><br>
+        <p align="left">
+            ৫৭ নং পশ্চিম লেলাংগরা সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ বিনাজুরী <br>
+        ভোটারঃ ৪১৯০<br>
+        দূরত্বঃ ৫ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.51813, 91.92049],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৪১</b><br>
+        <p align="left">
+            মোহাম্মদপুর উঃ বিঃ (পুরুষ ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ রাউজান<br>
+        ভোটারঃ ৩০২৫<br>
+        দূরত্বঃ ৪ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.51813, 91.92049],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৪২</b><br>
+        <p align="left">
+            মোহাম্মদপুর সঃ প্রাঃ বিঃ (মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ রাউজান<br>
+        ভোটারঃ ২৮৭০<br>
+        দূরত্বঃ ৪ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.52825, 91.93188],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৪৩</b><br>
+        <p align="left">
+            ৬২নং মধ্য রাউজান সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ রাউজান<br>
+        ভোটারঃ ২১০২<br>
+        দূরত্বঃ ৩.৫০ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.51438, 91.92973],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৪৪</b><br>
+        <p align="left">
+            আযমৈত্রীয় উঃ বিঃ (পুরুষ ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ রাউজান<br>
+        ভোটারঃ ১৮৪৮<br>
+        দূরত্বঃ ৪ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.51438, 91.92973],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৪৫</b><br>
+        <p align="left">
+            আযমৈত্রীয় উঃ বিঃ (মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ রাউজান<br>
+        ভোটারঃ ১৮০৯<br>
+        দূরত্বঃ ৪ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.52953, 91.94833],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৪৬</b><br>
+        <p align="left">
+            ৬১ নং পূর্ব রাউজান সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ রাউজান<br>
+        ভোটারঃ ২৫১৬<br>
+        দূরত্বঃ ৫ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.51737, 91.94739],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৪৭</b><br>
+        <p align="left">
+            ৬০ নং শমশেরনগর সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ রাউজান<br>
+        ভোটারঃ ৩৩৯৫<br>
+        দূরত্বঃ ৭ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.51117, 91.94269],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৪৮</b><br>
+        <p align="left">
+            ৬৮নং খলিলাবদ সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ রাউজান<br>
+        ভোটারঃ ৩৩৭৯<br>
+        দূরত্বঃ ৫ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.50169, 91.94776],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৪৯</b><br>
+        <p align="left">
+            কদলপুর ওসমানিয়া সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ কদলপুর<br>
+        ভোটারঃ ৫৪৬৭<br>
+        দূরত্বঃ ৬ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.48946, 91.95459],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৫০</b><br>
+        <p align="left">
+            কদলপুর স্কুল এন্ড কলেজ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ কদলপুর<br>
+        ভোটারঃ ৪৪২২<br>
+        দূরত্বঃ ৮ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+L.marker([22.49737, 91.94941],{icon: myIcon}).bindPopup(`<p align="center">
+<b style="text-align: center;">কেন্দ্র ৫১</b><br>
+<p align="left">
+    কদলপুর হামিদিয়া কামিল  (এম.এ) মাদ্রাসা (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+ইউনিয়নঃ কদলপুর<br>
+ভোটারঃ ৪১৯৬<br>
+দূরত্বঃ ৮ কিলোমিটার<br>
+</p>
+<div style="display: flex; align-items: center; justify-content: center;">
+    <a href="#">
+        <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+        onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+    </a>
+    <a href="#">
+        <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+        onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+    </a>
+</div>
+</p>`).addTo(map);
+
+
+        L.marker([22.48026, 91.95988],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৫২</b><br>
+        <p align="left">
+            কদলপুর পরীর দিঘি সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ কদলপুর<br>
+        ভোটারঃ ৪৫৫৭<br>
+        দূরত্বঃ ৯ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.46637, 91.9659],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৫৩</b><br>
+        <p align="left">
+            উনসত্তরপাড়া উচ্চ বিদ্যালয় (পুরুষ ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পাহাড়তলী <br>
+        ভোটারঃ ৩৫৬৪<br>
+        দূরত্বঃ ১০ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.46618, 91.96651],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৫৪</b><br>
+        <p align="left">
+            উনসত্তর পাড়া সঃ প্রাঃ বিঃ (মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পাহাড়তলী<br>
+        ভোটারঃ ৩৪২৪<br>
+        দূরত্বঃ ১০ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.454, 91.9507],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৫৫</b><br>
+        <p align="left">
+            উত্তর দেওয়ানপুর সরকারী প্রাথমিক বিদ্যালয় (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পাহাড়তলী<br>
+        ভোটারঃ ৫৪৭৬<br>
+        দূরত্বঃ ১৪ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.4561, 91.96746],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৫৬</b><br>
+        <p align="left">
+            খান পাড়া সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পাহাড়তলী<br>
+        ভোটারঃ ২৭৪৬<br>
+        দূরত্বঃ ১১ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.45461, 91.97075],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৫৭</b><br>
+        <p align="left">
+            শেখ পাড়া পরিজান সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পাহাড়তলী<br>
+        ভোটারঃ ২৯৯০<br>
+        দূরত্বঃ ১২ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.44041, 91.97004],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৫৮</b><br>
+        <p align="left">
+            মহামুনি এ্যাংলো পলি উচ্চ বিদ্যালয় (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পাহাড়তলী<br>
+        ভোটারঃ ২১৯৫<br>
+        দূরত্বঃ ১৬ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.4863, 91.91348],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৫৯</b><br>
+        <p align="left">
+            ৯২নং উত্তর গুজরা বিশ্বাস সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পূর্ব <br>
+        ভোটারঃ ২২৯৭<br>
+        দূরত্বঃ ৮ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.48733, 91.90641],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৬০</b><br>
+        <p align="left">
+            ৯১ নং উত্তর গুজরা উমা বোর্ড সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পূর্ব <br>
+        ভোটারঃ ৩৩৮৬<br>
+        দূরত্বঃ ১২ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+
+        L.marker([22.48103, 91.91648],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৬১</b><br>
+        <p align="left">
+            ৮৯নং অলিমিয়াহাট সঃপ্রাঃবিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র )<br>
+        ইউনিয়নঃ পূর্ব <br>
+        ভোটারঃ ৪৬৫৮<br>
+        দূরত্বঃ ১০ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+
+        L.marker([22.48241, 91.93327],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৬২</b><br>
+        <p align="left">
+            ৯৩নং আধারমানিক সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পূর্ব <br>
+        ভোটারঃ ৩৩৪৪<br>
+        দূরত্বঃ ৮ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+
+        L.marker([22.45915, 91.91827],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৬৩</b><br>
+        <p align="left">
+            হোয়ারাপাড়া সঃপ্রাঃবিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পূর্ব <br>
+        ভোটারঃ ৩৬৫০<br>
+        দূরত্বঃ ১৬ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+
+        L.marker([22.46418, 91.93902],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৬৪</b><br>
+        <p align="left">
+            ৮৬ নং পূর্ব গুজরা মোহাম্মদিয়া সঃপ্রাঃবিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পূর্ব <br>
+        ভোটারঃ ৩০৭৩<br>
+        দূরত্বঃ ৮ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+
+        L.marker([22.46427, 91.93892],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৬৫</b><br>
+        <p align="left">
+            পূর্ব গুজরা মোহাম্মদীয়া সিনিয়র মাদ্রাসা ও এতিমখানা (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পূর্ব <br>
+        ভোটারঃ ৩২০১<br>
+        দূরত্বঃ ১২ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+    L.marker([22.49484, 91.89355],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৬৬</b><br>
+        <p align="left">
+            কে. সি. কাগতিয়া সঃ প্রাঃ বিঃ ( পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পশ্চিম গুজরা<br>
+        ভোটারঃ ৫১৫২<br>
+        দূরত্বঃ ০৮কিলো<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+    
+        L.marker([22.47786, 91.89487],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৬৭</b><br>
+        <p align="left">
+            গুজরা শ্যামাচরণ উচ্চ বিঃ ( পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পশ্চিম গুজরা<br>
+        ভোটারঃ ৩৮৮৩<br>
+        দূরত্বঃ ১২ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.46857, 91.89263],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৬৮</b><br>
+        <p align="left">
+            ১০০ নং পশ্চিম গুজরা ইসলামিয়া সঃ প্রাঃ বিঃ ( পুরুষ ও মহিলা কেন্দ্র)<br>
+        ইউনিয়নঃ পশ্চিম গুজরা<br>
+        ভোটারঃ ২৪৯৩<br>
+        দূরত্বঃ ১৩ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.462, 91.90973],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৬৯</b><br>
+        <p align="left">
+            কাঠাঁল ভাংগা সঃ প্রাঃ বিঃ ( পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পশ্চিম গুজরা<br>
+        ভোটারঃ ২২৪৬<br>
+        দূরত্বঃ ১২ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.45186, 91.89483],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৭০</b><br>
+        <p align="left">
+            পশ্চিম গুজরা রামকৃষ্ণ সঃপ্রাঃবিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ পশ্চিম গুজরা<br>
+        ভোটারঃ ৪২৪৯<br>
+        দূরত্বঃ ১১ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.46617, 91.86937],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৭১</b><br>
+        <p align="left">
+            খলিফার ঘোনা সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ উরকিরচর ইউনিয়ন<br>
+        ভোটারঃ ১৫৮২<br>
+        দূরত্বঃ ১৭ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.46263, 91.88469],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৭২</b><br>
+        <p align="left">
+            আবুরখীল অমিতাভ উচ্চ বিদ্যালয় (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ উরকিরচর ইউনিয়ন<br>
+        ভোটারঃ ৩১২৭<br>
+        দূরত্বঃ ১৫ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.45163, 91.86457],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৭৩</b><br>
+        <p align="left">
+            উত্তর উরকিরচর সঃ প্রাঃ বিঃ (পুরুষ ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ উরকিরচর ইউনিয়ন<br>
+        ভোটারঃ ৩১৫৩<br>
+        দূরত্বঃ ২২ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.45174, 91.86487],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৭৪</b><br>
+        <p align="left">
+            উরকিরচর উচ্চ বিদ্যালয়  (মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ উরকিরচর ইউনিয়ন<br>
+        ভোটারঃ ২৭৯৬<br>
+        দূরত্বঃ ২২ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.43857, 91.88522],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৭৫</b><br>
+        <p align="left">
+            হাড়পাড়া সঃ প্রাঃ বিঃ (পুরুষ ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ উরকিরচর ইউনিয়ন<br>
+        ভোটারঃ ৩৫২৭<br>
+        দূরত্বঃ ১৮ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.43871, 91.88572],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৭৬</b><br>
+        <p align="left">
+            হারপাড়া উচ্চ বিদ্যালয়  (মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ উরকিরচর ইউনিয়ন<br>
+        ভোটারঃ ৩১৬২<br>
+        দূরত্বঃ ১৮ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.44826, 91.86428],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৭৭</b><br>
+        <p align="left">
+            মিরাপাড়া সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ উরকিরচর ইউনিয়ন<br>
+        ভোটারঃ ৩৮১৭<br>
+        দূরত্বঃ ২০ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.43612, 91.90319],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৭৮</b><br>
+        <p align="left">
+            নোয়াপাড়া  ডিগ্রী কলেজ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ নোয়াপাড়া ইউনিয়ন<br>
+        ভোটারঃ ৪০৩৮<br>
+        দূরত্বঃ ১৬ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.44112, 91.90916],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৭৯</b><br>
+        <p align="left">
+            নোয়াপাড়া উচ্চ বিদ্যালয় পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ নোয়াপাড়া ইউনিয়ন<br>
+        ভোটারঃ ৩৬০৬<br>
+        দূরত্বঃ ১৭ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.43044, 91.89454],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৮০</b><br>
+        <p align="left">
+            সাম মহালদার পাড়া সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ নোয়াপাড়া ইউনিয়ন<br>
+        ভোটারঃ ২৯০৭<br>
+        দূরত্বঃ ২১ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.43148, 91.91523],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৮১</b><br>
+        <p align="left">
+            শেখ পাড়া সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ নোয়াপাড়া ইউনিয়ন<br>
+        ভোটারঃ ৩৮৪৭<br>
+        দূরত্বঃ ২২ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.42558, 91.90763],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৮২</b><br>
+        <p align="left">
+            দক্ষিন নোয়াপাড়া সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ নোয়াপাড়া ইউনিয়ন<br>
+        ভোটারঃ ৪০৯১<br>
+        দূরত্বঃ ২০ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([23.807250659848012, 90.69182551930804],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৮৩</b><br>
+        <p align="left">
+            ১২৩নং নোয়াপাড়া কৈবর্ত্য পাড়া সঃ প্রাঃ বিঃ (পুরুষ ওমহিলা কেন্দ্র)<br>
+        ইউনিয়নঃ নোয়াপাড়া ইউনিয়ন<br>
+        ভোটারঃ ২৯৬০<br>
+        দূরত্বঃ ২৩ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.42284, 91.9034],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৮৪</b><br>
+        <p align="left">
+            ছামিদার কোয়াং সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ নোয়াপাড়া ইউনিয়ন<br>
+        ভোটারঃ ৪৪৩৬<br>
+        দূরত্বঃ ২০ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.41748, 91.89698],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৮৫</b><br>
+        <p align="left">
+            পূর্ব খচুখাইন সঃ প্রাঃবিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র )<br>
+        ইউনিয়নঃ নোয়াপাড়া ইউনিয়ন<br>
+        ভোটারঃ ৩৬৪৫<br>
+        দূরত্বঃ ২০ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.41755, 91.89035],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৮৬</b><br>
+        <p align="left">
+            কচুখাইন মিয়া আলী উচ্চ বিদ্যালয় (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ নোয়াপাড়া ইউনিয়ন<br>
+        ভোটারঃ ৩৮৫৩<br>
+        দূরত্বঃ ২২ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.46037, 91.94572],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৮৭</b><br>
+        <p align="left">
+            গশ্চি বোর্ড সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ বাগোয়ান ইউনিয়ন<br>
+        ভোটারঃ ২৫০০<br>
+        দূরত্বঃ ১৮ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.44725, 91.93997],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৮৮</b><br>
+        <p align="left">
+            গশ্চি উচ্চ বিদ্যালয় (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ বাগোয়ান ইউনিয়ন<br>
+        ভোটারঃ ৪৮১২<br>
+        দূরত্বঃ ১৮ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.4328, 91.94084],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৮৯</b><br>
+        <p align="left">
+            পাঁচখাইন সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ বাগোয়ান ইউনিয়ন<br>
+        ভোটারঃ ২৭৬৩<br>
+        দূরত্বঃ ২২ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.42917, 91.93202],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৯০</b><br>
+        <p align="left">
+            পাঁচখাইন দরগাহ সঃ প্রাঃ বিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ বাগোয়ান ইউনিয়ন<br>
+        ভোটারঃ ৫২৭৫<br>
+        দূরত্বঃ ২১ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.43219, 91.95955],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৯১</b><br>
+        <p align="left">
+            কোয়েপাড়া বালিকা উচ্চ বিদ্যালয় (পুরুষ ও মহিলা কেন্দ্র)<br>
+        ইউনিয়নঃ বাগোয়ান ইউনিয়ন<br>
+        ভোটারঃ ৩০৪৯<br>
+        দূরত্বঃ ২৩ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.42339, 91.95909],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৯২</b><br>
+        <p align="left">
+            কোয়েপাড়া উচ্চ বিদ্যালয় (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ বাগোয়ান ইউনিয়ন<br>
+        ভোটারঃ ১৬৯৯<br>
+        দূরত্বঃ ২৩ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.54783, 91.86099],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৯৩</b><br>
+        <p align="left">
+            নোয়াজিশপুর সঃপ্রাঃবিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ নোয়াজিশপুর ইউনিয়ন<br>
+        ভোটারঃ ৩৪৭৩<br>
+        দূরত্বঃ ৯ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+
+        L.marker([22.55453, 91.86338],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৯৪</b><br>
+        <p align="left">
+            অদুদিয়া উচ্চ বিদ্যালয় (ফতেনগর) পুরুষ ও মহিলা কেন্দ্র<br>
+        ইউনিয়নঃ নোয়াজিশপুর ইউনিয়ন<br>
+        ভোটারঃ ৪২৭৯<br>
+        দূরত্বঃ ৭ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+        L.marker([22.55154, 91.85197],{icon: myIcon}).bindPopup(`<p align="center">
+        <b style="text-align: center;">কেন্দ্র ৯৫</b><br>
+        <p align="left">
+            নদিমপুর সঃপ্রাঃবিঃ (পুরুষ ও মহিলা ভোট কেন্দ্র)<br>
+        ইউনিয়নঃ নোয়াজিশপুর ইউনিয়ন<br>
+        ভোটারঃ ৩২৩৫<br>
+        দূরত্বঃ ৮ কিলোমিটার<br>
+        </p>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 5px 0 0;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">ছবি দেখুন</button>
+            </a>
+            <a href="#">
+                <button style="padding: 5px 10px; background-color: rgb(41, 92, 41); border: none; color: #fff; border-radius: 8px; margin-right: auto; text-decoration: none; cursor: pointer; margin: 0 0 0 5px;" onMouseOver="this.style.backgroundColor='rgb(23, 59, 23)'"
+                onMouseOut="this.style.backgroundColor='rgb(41, 92, 41)'">রাস্তা দেখুন</button>
+            </a>
+        </div>
+    </p>`).addTo(map);
+
+    </script>
 </body>
 </html>
